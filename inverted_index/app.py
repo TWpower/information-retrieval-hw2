@@ -11,9 +11,9 @@ inverted_index = {}
 
 # 1.txt ~ 4.txt를 읽으면서 단어를 words에 추가
 # 여기서 i는 Document ID라고 정의합니다.
-for i in range(1,5):
+for document_id in range(1,5):
 
-	with open(str(i) + '.txt', 'r') as txt_file:
+	with open(str(document_id) + '.txt', 'r') as txt_file:
 
 		txt = txt_file.read()
 		result = pattern.findall(txt)
@@ -24,10 +24,10 @@ for i in range(1,5):
 
 			if word not in words:
 				words.append(word)
-				inverted_index[word] = [i]
+				inverted_index[word] = [document_id]
 			else:
-				if i not in inverted_index[word]:
-					inverted_index[word].append(i)
+				if document_id not in inverted_index[word]:
+					inverted_index[word].append(document_id)
 
 		words.sort()
 
