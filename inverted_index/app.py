@@ -32,7 +32,6 @@ for document_id in range(1,5):
 		words.sort()
 
 # 이제 하나하나 단어들을 보면서 출력을 합니다.
-
 for word in words:
 	print(word + ' : ', end='')
 	for id in inverted_index[word]:
